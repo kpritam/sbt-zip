@@ -5,6 +5,5 @@ lazy val root = (project in file("."))
   .settings(
     scalaVersion := "2.12.4",
     version := "0.1",
-    sourceZipDir := crossTarget.value,
-    scriptedBufferLog := false
+    sourceZipDir := crossTarget.value
   )
