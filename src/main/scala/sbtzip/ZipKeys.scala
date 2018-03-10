@@ -1,4 +1,4 @@
-package io.kpritam.sbt.sbtzip
+package sbtzip
 
 import sbt._
 

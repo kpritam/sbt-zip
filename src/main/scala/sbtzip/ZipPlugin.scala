@@ -1,8 +1,8 @@
-package io.kpritam.sbt.sbtzip
+package sbtzip
 
 import java.io.File
 
-import sbt.Keys.target
+import sbt.Keys.{sLog, target}
 import sbt._
 import sbt.io.{IO, Path}
 
@@ -20,9 +20,11 @@ object ZipPlugin extends AutoPlugin {
   )
 
   private def zipTask =  Def.task {
+    val log = sLog.value
     lazy val zip = new File(targetZipDir.value, sourceZipDir.value.getName + ".zip")
+
+    log.info("Zipping file...")
     IO.zip(Path.allSubpaths(sourceZipDir.value), zip)
     zip
   }
-
 }
